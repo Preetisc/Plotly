@@ -12,7 +12,7 @@ var y = [];
 function init(){
 
 
-  d3.json("samples.json").then(function(data) {
+  d3.json("../static/data/samples.json").then(function(data) {
     subjects=data;
     metadata=data.metadata;
     sub_names = data.names
@@ -32,23 +32,7 @@ function init(){
     updateDemograph(current_subject);
     updatePlotly(current_subject);
   });//read json data
-  
-  // var layout = {
-  //   title : "hello"
-  // }
-  
-  // data ={
-  //   x : samples[0].sample_values,
-  //   y : samples[0].otu_ids,
-  //   type:'bar',
-  //   orientation :'h'
-  // }
     
-  // Plotly.newPlot("bar", data,layout);
-
-  // d3.selectAll("#selDataset").on("change", updatePage);
- 
-
 }//init()
 
 function optionChanged(id){
@@ -57,20 +41,6 @@ function optionChanged(id){
 
 }
 
-// function updatePage(){
-//   // Use D3 to select the dropdown menu
-//   var dropdownMenu = d3.select("#selDataset");
-//   // Assign the value of the dropdown menu option to a variable
-//   current_subject = dropdownMenu.property("value");
-//   // change the demographics section sample-metadata
-//   console.log(current_subject)
-//   //update the demographics
-//   updateDemograph(current_subject);
-//   //Update plot
-//   updatePlotly(current_subject); 
-
-
-// }
 function updateDemograph(current_subject){
 //START -Display Demographics information for current_subjet
   // get {} of the current_subject
@@ -142,18 +112,8 @@ function updatePlotly(current_subject) {
       
     Plotly.newPlot("bar", data,layout_bar);
 
-
-    
-    
-    // Note the extra brackets around 'x' and 'y'
-    // Plotly.newPlot("bar", "x", [x]);
-    // Plotly.newPlot("bar", "y", [y]);
   }
-/*
-// Sort the array in ascending order using an arrow function
-var sortedAscending = numArray.sort((a, b) => a - b);
-console.log(sortedAscending);
-*/
+
 /**
  * BONUS Solution
  * */
