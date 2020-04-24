@@ -94,13 +94,13 @@ function updatePlotly(current_subject) {
       }
     }]
     var layout = {
-      title : "bubblechart"
+      title : ""
     }
     Plotly.newPlot("bubble",trace1,layout);
 
     //bar chart
     var layout_bar = {
-      title : "bar chart"
+      title : ""
     }
     var y1 = y.slice(0, 10).map(otuID => `OTU ${otuID}`);
     var data =[{
