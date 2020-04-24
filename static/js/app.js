@@ -12,7 +12,7 @@ var y = [];
 function init(){
 
 
-  d3.json("/static/data/samples.json").then(function(data) {
+  d3.json("static/js/samples.json").then(function(data) {
     subjects=data;
     metadata=data.metadata;
     sub_names = data.names
